@@ -1,0 +1,10 @@
+path: /content/drive/MyDrive/YOLO-FOOTBALL/FootBall_Yolo/Football_Yolo_Dataset
+train: /content/drive/MyDrive/YOLO-FOOTBALL/FootBall_Yolo/Football_Yolo_Dataset/images/train
+val: /content/drive/MyDrive/YOLO-FOOTBALL/FootBall_Yolo/Football_Yolo_Dataset/images/val
+test: # test images (optional)
+
+# Classes
+names:
+  0: player
+  1: ball
+
