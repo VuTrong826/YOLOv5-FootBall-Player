@@ -1,6 +1,5 @@
 # [PYTHON] YOLO (You Only Look Once)
 ## How to use my code
-
 With my code, you can:
 * **Train your model from scratch**
 * **Train your model with my trained model**
@@ -17,7 +16,7 @@ With my code, you can:
 * **json**
 
 # Football Object Detection
-This project utilizes object detection algorithms to analyze football matches videos by finding the position of different objects on the football pitch and classifying them into 7 different classes:  
+This project utilizes object detection algorithms to analyze football matches videos by finding the position of different objects on the football pitch and classifying them into 2 different classes:  
 0 - Player   
 1 - Ball
 ## Build Your Own Training Set Configuration and Model Configuration
