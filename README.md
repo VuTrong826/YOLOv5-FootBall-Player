@@ -22,14 +22,14 @@ This project utilizes object detection algorithms to analyze football matches vi
 ## Build Your Own Training Set Configuration and Model Configuration
 Model Configuration File:
 ```yaml
-#yolov8x-seg_custom.yaml
+#yolov5_custom.yaml
 # Parameters
 # Parameters
-nc: 1  # number of classes
+nc: 2  # number of classes
 depth_multiple: 1.00  # scales module repeats
 width_multiple: 1.25  # scales convolution channels
 
-# YOLOv8.0x backbone
+# YOLOv5.0x backbone
 backbone:
   # [from, repeats, module, args]
   - [-1, 1, Conv, [64, 3, 2]]  # 0-P1/2
@@ -43,7 +43,7 @@ backbone:
   - [-1, 3, C2f, [512, True]]
   - [-1, 1, SPPF, [512, 5]]  # 9
 
-# YOLOv8.0x head
+# YOLOv5.0x head
 head:
   - [-1, 1, nn.Upsample, [None, 2, 'nearest']]
   - [[-1, 6], 1, Concat, [1]]  # cat backbone P4
@@ -61,7 +61,7 @@ head:
   - [[-1, 9], 1, Concat, [1]]  # cat head P5
   - [-1, 3, C2f, [512]]  # 23 (P5/32-large)
 
-  - [[15, 18, 21], 1, Segment, [nc, 32, 256]]  # Detect(P3, P4, P5)
+  - [[15, 18, 21], 1, detect, [nc, 32, 256]]  # Detect(P3, P4, P5)
 ```
 
 ```yaml
@@ -115,7 +115,7 @@ name: detection_result # experiment name
 # optimizer to use, choices=['SGD', 'Adam', 'AdamW', 'RMSProp']
 ...
 ```
-## YOLOv5 Segmentation Task Training :
+## YOLOv5 Object Detection Task Training :
 * To install the Ultralytics library for YOLO 
 ```python
 %pip install ultralytics
